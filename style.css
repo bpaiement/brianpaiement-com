@@ -75,10 +75,6 @@ h1 em{font-style:normal;color:var(--accent)}
   font-family:var(--pixel);font-size:8px;opacity:0;pointer-events:none;transition:opacity .12s steps(2),transform .12s steps(2)}
 .social:hover::after,.social:focus-visible::after{opacity:1;transform:translate(-50%,0)}
 
-footer{position:relative;z-index:2;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
-  padding:22px 20px 28px;font-size:19px;letter-spacing:.06em;color:var(--ink-dim)}
-.foot-dot{color:var(--accent)}
-
 @media (max-width:760px){
   .layout{grid-template-columns:1fr;justify-items:center;text-align:center;gap:36px}
   .portrait{width:min(300px,78vw)}

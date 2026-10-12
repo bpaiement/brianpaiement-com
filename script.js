@@ -4,8 +4,6 @@
   var canvas = document.getElementById("sky");
   var ctx = canvas.getContext("2d");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   var W = 0, H = 0, DPR = 1, stars = [], raf = 0, running = true;
   var mx = 0, my = 0, tx = 0, ty = 0;
@@ -48,10 +46,11 @@
 
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
-      // Stepped twinkle: only 4 brightness levels, changes in discrete steps (8-bit feel)
+      // Same 4-step pulse as the first sky: each star has its own phase and
+      // speed, so they fade in and out at different times.
       var step = Math.floor(t * s.speed + s.phase) % 4;
       var levels = [0.25, 0.55, 1, 0.55];
-      ctx.globalAlpha = levels[step] * (0.16 + s.depth * 0.42); // subtle
+      ctx.globalAlpha = levels[step] * (0.35 + s.depth * 0.65);
       ctx.fillStyle = s.color;
       var y = snap((s.y + t * s.drift) % (H + 12) - 6);
       var x = snap(s.x + mx * (3 + s.depth * 12));
