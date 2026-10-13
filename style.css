@@ -55,8 +55,8 @@ h1 em{font-style:normal;color:var(--accent)}
 /* Divider: a solid bar that breaks into shrinking pieces. Sized in units of
    the bar thickness (--u) so it scales as one block. */
 .rule{--u:15px;display:flex;align-items:center;gap:var(--u);margin:22px 0 24px;width:max-content;max-width:100%}
-.rule span{flex:none;height:round(calc(var(--u) * .75), 1px);width:calc(var(--u) * var(--w));
-  background:var(--accent);box-shadow:calc(var(--u) / 4) calc(var(--u) / 4) 0 var(--black)}
+.rule span{flex:none;height:round(calc(var(--u) * .5625), 1px);width:calc(var(--u) * var(--w));
+  background:var(--accent);box-shadow:calc(var(--u) * .1875) calc(var(--u) * .1875) 0 var(--black)}
 
 /* Socials — logos only, chunky pixel buttons */
 .socials{display:flex;gap:16px;flex-wrap:wrap}
