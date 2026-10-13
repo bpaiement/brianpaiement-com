@@ -48,7 +48,7 @@ body{
 .portrait-frame img:not(.is-missing) ~ .portrait-fallback{display:none}
 
 /* Intro */
-h1{margin:0;font-family:var(--pixel);font-weight:400;
+h1{margin:0 0 -0.3em;font-family:var(--pixel);font-weight:400;
   font-size:clamp(26px,4.2vw,46px);line-height:1.25;letter-spacing:-0.04em;
   text-shadow:4px 4px 0 var(--black)}
 h1 em{font-style:normal;color:var(--accent)}
