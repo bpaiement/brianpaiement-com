@@ -52,10 +52,11 @@ h1{margin:0;font-family:var(--pixel);font-weight:400;
   font-size:clamp(26px,4.2vw,46px);line-height:1.45;letter-spacing:0;
   text-shadow:4px 4px 0 var(--black)}
 h1 em{font-style:normal;color:var(--accent)}
-.rule{display:flex;align-items:center;gap:6px;margin:32px 0}
-.rule-line,.rule-dash{height:3px;background:var(--accent);box-shadow:2px 2px 0 var(--black)}
-.rule-line{flex:1}
-.rule-dash{flex:none}
+/* Divider: a solid bar that breaks into shrinking pieces. Sized in units of
+   the bar thickness (--u) so it scales as one block. */
+.rule{--u:15px;display:flex;align-items:center;gap:var(--u);margin:32px 0;width:max-content;max-width:100%}
+.rule span{flex:none;height:var(--u);width:calc(var(--u) * var(--w));
+  background:var(--accent);box-shadow:calc(var(--u) / 3) calc(var(--u) / 3) 0 var(--black)}
 
 /* Socials — logos only, chunky pixel buttons */
 .socials{display:flex;gap:16px;flex-wrap:wrap}
@@ -78,7 +79,7 @@ h1 em{font-style:normal;color:var(--accent)}
   .layout{grid-template-columns:1fr;justify-items:center;text-align:center;gap:36px}
   .portrait{width:min(300px,78vw)}
   .intro{display:grid;justify-items:center}
-  .rule{width:min(320px,80vw)}
+  .rule{--u:clamp(8px,2.6vw,15px)}
   .socials{justify-content:center}
   h1{font-size:clamp(22px,7vw,32px)}
 }
