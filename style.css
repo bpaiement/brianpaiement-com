@@ -49,7 +49,7 @@ body{
 
 /* Intro */
 h1{margin:0 0 -0.3em;font-family:var(--pixel);font-weight:400;
-  font-size:clamp(26px,4.2vw,46px);line-height:1.25;letter-spacing:-0.04em;
+  font-size:clamp(18px,3vw,40px);white-space:nowrap;line-height:1.25;letter-spacing:-0.04em;
   text-shadow:4px 4px 0 var(--black)}
 h1 em{font-style:normal;color:var(--accent)}
 /* Divider: a solid bar that breaks into shrinking pieces. Sized in units of
@@ -59,16 +59,22 @@ h1 em{font-style:normal;color:var(--accent)}
   background:var(--accent);box-shadow:calc(var(--u) * .1875) calc(var(--u) * .1875) 0 var(--black)}
 
 /* Socials — logos only, chunky pixel buttons */
-.socials{display:flex;gap:16px;flex-wrap:wrap}
-.social{position:relative;width:58px;height:58px;display:grid;place-items:center;
+.socials{display:flex;gap:12px;flex-wrap:wrap}
+.social{position:relative;width:41px;height:41px;display:grid;place-items:center;
   color:var(--ink);background:var(--panel);text-decoration:none;
-  border:3px solid var(--ink);border-radius:26%;corner-shape:squircle;
-  box-shadow:5px 5px 0 var(--black);
+  border:2px solid var(--ink);border-radius:26%;corner-shape:squircle;
+  box-shadow:3px 3px 0 var(--black);
   transition:transform .08s steps(2),background .08s steps(2),color .08s steps(2),box-shadow .08s steps(2)}
+/* Logos fill the button with even padding (~28% each side); per-brand
+   tweaks keep them optically the same size and weight. */
+.social svg{display:block;width:27px;height:27px}
+.social[data-label="X"] svg{width:24px;height:24px}
+.social[data-label="Instagram"] svg{stroke-width:2}
+.social[data-label="Threads"] svg{width:26px;height:26px}
 .social:hover,.social:focus-visible{color:#171a21;background:var(--accent);border-color:var(--accent-dark);
-  transform:translate(3px,3px);box-shadow:2px 2px 0 var(--black)}
+  transform:translate(2px,2px);box-shadow:1px 1px 0 var(--black)}
 .social:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.social:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--black)}
+.social:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--black)}
 .social::after{content:attr(data-label);position:absolute;left:50%;bottom:calc(100% + 12px);
   transform:translate(-50%,4px);padding:5px 9px;white-space:nowrap;
   background:var(--black);color:var(--ink);border:2px solid var(--ink);
@@ -81,9 +87,17 @@ h1 em{font-style:normal;color:var(--accent)}
   .intro{display:grid;justify-items:center}
   .rule{--u:clamp(8px,2.6vw,15px)}
   .socials{justify-content:center}
-  h1{font-size:clamp(22px,7vw,32px)}
+  h1{font-size:clamp(22px,7vw,32px);white-space:normal}
 }
 @media (prefers-reduced-motion: reduce){
   .social{transition:none}
   .social:hover{transform:none}
+}
+@media (min-width:761px){
+  /* Single-line name: the divider spans exactly the name's width */
+  .intro{--name:clamp(18px,3vw,40px);width:max-content;max-width:100%}
+  .intro h1{font-size:var(--name)}
+  /* end the last square centered under the stem of the final t */
+  .rule{width:auto;margin-right:calc(var(--name) * .26)}
+  .rule span:first-child{flex:1 1 auto}
 }
