@@ -52,10 +52,10 @@ h1{margin:0;font-family:var(--pixel);font-weight:400;
   font-size:clamp(26px,4.2vw,46px);line-height:1.45;letter-spacing:0;
   text-shadow:4px 4px 0 var(--black)}
 h1 em{font-style:normal;color:var(--accent)}
-.rule{display:flex;align-items:center;gap:14px;margin:32px 0;color:var(--accent)}
-.rule-line{flex:1;height:3px;background:var(--accent);box-shadow:2px 2px 0 var(--black)}
-.rule-chevrons{flex:none;display:block;width:44px;height:auto;image-rendering:pixelated;
-  filter:drop-shadow(2px 2px 0 var(--black))}
+.rule{display:flex;align-items:center;gap:6px;margin:32px 0}
+.rule-line,.rule-dash{height:3px;background:var(--accent);box-shadow:2px 2px 0 var(--black)}
+.rule-line{flex:1}
+.rule-dash{flex:none}
 
 /* Socials — logos only, chunky pixel buttons */
 .socials{display:flex;gap:16px;flex-wrap:wrap}
