@@ -49,12 +49,12 @@ body{
 
 /* Intro */
 h1{margin:0;font-family:var(--pixel);font-weight:400;
-  font-size:clamp(26px,4.2vw,46px);line-height:1.45;letter-spacing:0;
+  font-size:clamp(26px,4.2vw,46px);line-height:1.25;letter-spacing:-0.04em;
   text-shadow:4px 4px 0 var(--black)}
 h1 em{font-style:normal;color:var(--accent)}
 /* Divider: a solid bar that breaks into shrinking pieces. Sized in units of
    the bar thickness (--u) so it scales as one block. */
-.rule{--u:15px;display:flex;align-items:center;gap:var(--u);margin:32px 0;width:max-content;max-width:100%}
+.rule{--u:15px;display:flex;align-items:center;gap:var(--u);margin:22px 0 24px;width:max-content;max-width:100%}
 .rule span{flex:none;height:round(calc(var(--u) * .75), 1px);width:calc(var(--u) * var(--w));
   background:var(--accent);box-shadow:calc(var(--u) / 4) calc(var(--u) / 4) 0 var(--black)}
 
